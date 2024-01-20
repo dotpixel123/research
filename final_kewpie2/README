@@ -1,0 +1,192 @@
+README of the KEWPIE2 code (September 2015)
+ 
+////////////////////////////////////////////////////////////////////////////////////////
+ 
+INSTALLATION/COMPILATION
+
+The KEWPIE2 program requires prior installation of the latest version of the GSL library:
+- UNIX environment: gsl-1.16.tar.gz, can be downloaded from http://www.gnu.org/software/gsl/
+- Make sure that PATH contains the link to the GSL library with *.h files.
+- To complie the code, please use Makefile, which can be modified by the user.
+
+RUNNING THE PROGRAM
+
+After successful compilation, just type "make run" in the terminal to run the program.
+- Modifying the input file in the folder "Input/" (see below for more details) 
+- The output file can be found in the folder "Results".
+
+The above instructions also work for the MAC environment.
+
+// ****************************** List of the source files *************************** //
+
+The source code is mainly composed of *.h, *.cpp, which are given and explained as follows:
+                     
+Cascade.cpp, Cascade.h      
+- Simulating the whole de-excitation process of a compound nucleus
+
+Decay.cpp, Decay.h
+- Simulating the decay of a mother nucleus into its daughter nucleus via competition between 
+particle evaporation, fission and gamma-ray emission
+
+Fission.cpp, Fission.h        
+- Calculation of the fission-decay width
+
+Evaporation.cpp, Evaporation.h
+- Calculation of the particle-evaporation width
+  
+Gamma.cpp, Gamma.h
+- Calculation of the gamma-decay width with radiation strength functions
+          
+Leveldensity.cpp, Leveldensity.h
+- State-density formula with level-density parameter models
+
+Fusion.cpp, Fusion.h
+- Estimation of capture cross-sections using two simple models
+ 
+Synthesis.cpp, Synthesis.h
+- Gathering the populations for residual nuclei
+
+Element.cpp, Element.h
+- Determination of some physical properties related to an atomic nucleus
+      
+Particle.cpp, Particle.h
+- Determination of some physical properties related to an evaporated particle
+      
+Transcoef.cpp, Transcoef.h
+- Solving the Schrodinger equation and calculating the transmission coefficient 
+
+InitMassArray.cpp, InitMassArray.h
+- Reading mass tables and fission-barrier tables
+  
+Potential.cpp, Potential.h
+- Optical potential models and the HIVAP potential model for the WKB approximation
+
+Readinput.cpp, Readinput.h
+- Reading the input file
+      
+Writeoutput.cpp, Writeoutput.h
+- Writing the final results into an output file
+
+Constantes.h               
+- Definition of some physical constants             
+
+main.cpp
+- The main file in the source code
+
+////////////////////////////////////////////////////////////////////////////////////////
+ 
+INPUT FILE DESCRIPTION
+ 
+The input file mainly contains:
+- Parameter values ​​associated with nuclear models.
+- Technical parameters for launching a simulation.
+
+Note that the structure of this file and the order of parameters should not be modified 
+so as to ensure proper execution of the KEWPIE2 program.
+ 
+// ********************** Parameters and models ************************************* //
+ 
+* Mass table:
+- 0: Moller-Nix mass table with shell-correction energies and quadrupole deformations (by default)
+- 1: User-defined mass table (put into the folder "Input/MassTab/", the same structure as the M-N mass table)
+ 
+* Correction factor for the moment of inertia:
+- V. I. Zagrebaev, Y. Aritomo, M. G. Itkis, Y. T. Oganessian, and M. Ohta, Phys. Rev. C 65, 014607 (2001)
+- 0.4 (by default)
+ 
+* Level-density parameter:
+- 0: Fermi Gas Model (A/Cst) where Cst is defined in Constantes.h.
+- 1: J. Toke et W.J. Swiatecki, Nucl. Phys. A. 372, 141 (1981) (by default)
+- 2: W. Reisdorf, Z. Phys. A 300, 227 (1981)
+- 3: B. Nerlo-Pomorska, K. Pomorski and J. Bartel, Phys. Rev. C 74, 034327 (2006)
+ 
+* Evaporation calculation:
+- 0: Hauser-Feshbach formalism
+- 1: Weisskopf-Ewing formalism (by default)
+ 
+* Fission-barrier model:
+- 0: User-defined fission-barrier file (put into the folder "Input/FissBar/")
+- 1 (macroscopic): W. D. Myers et W. J. Swiatecki Phys. Rev. C 60, 014606 (1999) (by default)
+- 2 (macroscopic): F. A. Ivanyuk and K. Pomorski, Phys. Rev. C 79, 054327 (2009)
+
+* Optical model for nucleons:
+- 0: R. Varner, W. Thompson, T. McAbee, E. Ludwig, and T. Clegg, Phys. Rep. 201, 57 (1991) (by default)
+- 1: A. Koning and J. Delaroche, Nucl. Phys. A 713, 231 (2003)
+- Note that some further tests should be done for both options
+ 
+* Shell-correction factor:
+- Scaling factor adjusting shell-correction energies for all the residual nuclei produced in a reaction.
+ 
+* Shell-damping energy:
+- A. V. Ignatyuk, G. Smirenkin, and A. Tishin, Yad. Fiz., v. 21, no. 3, pp. 485-490 21 (1975)
+- 19 MeV (by default)
+ 
+* af/an ratio:
+- Multiplicative factor affecting the density level parameter at the saddle point.
+- 1.0 (by default)
+ 
+* Reduced friction coefficient:
+- Friction parameter used in the Kramers-Strutinsky factor to estimate the fission-decay width.
+- 5e21 s^-1 (by default)
+ 
+* Potential curvature in the ground state:
+- Value of the potential curvature in the ground state.
+- 1.0 MeV (by default)
+ 
+* Potential curvature at the saddle point:
+- Value of the potential curvature at the saddle point.
+- 1.0 MeV (by default)
+ 
+* Transient time related to the fission process:
+- Modeling a dynamical fission process by a Heaviside function.
+- 0e-21 s (by default)
+ 
+* Gamma-ray strength function:
+- 0: EGLO model
+- 1: SMLO model (by default)
+ 
+* Fusion model:
+- 0: WKB approximation
+- 1: EBD method whose two main parameters can be adjusted
+- 2: User-defined file containing fusion cross-sections (put into the folder "Input/Fusion/")
+
+For more details on the parameters or models, please refer to the KEWPIE2 paper.
+ 
+// ********************** Technical parameters ************************************* //
+ 
+* Number of evaporated particles at each step:
+- 1: Evaporation neutron only (by default)
+- 2: Evaporation neutron and proton
+- 3: Evaporation neutron, proton and alpha
+ 
+* Total number of emitted neutrons:
+- Number of neutrons evaporated in a cascade.
+ 
+* Total number of emitted protons:
+- Number of protons evaporated in a cascade.
+ 
+* Time factor for the fission-time calculation:
+- Multiplicative factor for incrementing the time step for the fission-time calculation.
+- 1.1 (by default)
+- When modifying the default value, please be cautious with "MaxT" in the file main.cpp
+ 
+* Cut-off for the transmission coefficient:
+- Minimum value for the transmission coefficient.
+- 1e-6 (by default)
+ 
+* Cut-off for the decay width:
+- Minimum value for the decay width (particle evaporation, nuclear fission and gamma-ray emission).
+- 1e-50 (by default)
+ 
+* Stepsize for the kinetic energy:
+- Bin size for discretizing the kinetic energy.
+- 0.1 MeV (by default)
+- Smaller values can be employed but the average computation time increases.
+ 
+* Stepsize for the energy discretization:
+- Bin size for discretizing the population spectrum of nuclei.
+- 0.1 MeV (by default)
+ 
+* Stepsize for plotting the excitation function:
+- Calculation step for estimating the excitation function.
+- 1.0 MeV (by default)

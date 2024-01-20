@@ -1,0 +1,66 @@
+# Parameters and options used in calculation
+# 8   Projectile charge
+# 16   Projectile mass
+# 82   Target charge
+# 208   Target mass
+# 1   Shell correction
+# 1   Shell-correction factor
+# 0.1   Stepsize for the kinetic energy
+# 1   Level-density parameter used
+# 19   Damping-shell energy used
+# 1   af/an ratio
+# 0.4   Correction factor for the moment of inertia
+# 0   Mass table used
+# 1   Pairing correction
+# 1   Kramers-Strutinsky factor
+# 1   Collective enhancement factor
+# 5e+21   Reduced friction used
+# 1   Potential curvature in the ground state (MeV)
+# 1   Potential curvature at the saddle point (MeV)
+# 1   Evaporation model used
+# 0   Hill-Wheeler penetration factor used
+# 1   Fission-barrier model used
+# 20   Minimum excitation energy
+# 40   Maximum excitation energy
+# 0.1   Stepsize for the spectral discretization
+# 1   Stepsize for plotting the excitation function
+# 0   Minimum angular momentum
+# 199   Maximum angular momentum
+# 4   Number of emitted neutrons
+# 0   Number of emitted protons
+# 1   Types of emitted particles at each step
+# 0   Gamma-ray emission
+# 1   Gamma-ray emission model used
+# 0   Fission-time calculation
+# 1.1   Time factor
+# 1e-06   Cut-off for the transmission coefficient
+# 1e-50   Cut-off for the decay width
+# 1   Fusion model used
+# 0, 0   Barrier-distribution parameters
+# 32   Number of abscissas for the G-L integration
+# CaPu.dat   Name of the fusion data file
+# Koura.dat   Name of the nuclear data file
+# MollerFisBar.dat   Name of the fission-barrier data file
+# cross-sections.dat   Name of the output file
+# Estar	Ecm	Elab	Fusion	0n0p	1n0p	2n0p	3n0p	4n0p   
+2.000000e+01   6.663022e+01   7.175563e+01   1.991006e-03   0.000000e+00   2.550306e-06   4.651486e-04   0.000000e+00   0.000000e+00   
+2.100000e+01   6.763022e+01   7.283255e+01   2.129954e-02   0.000000e+00   7.924733e-06   5.170102e-03   0.000000e+00   0.000000e+00   
+2.200000e+01   6.863022e+01   7.390947e+01   1.630240e-01   0.000000e+00   1.810670e-05   4.088874e-02   0.000000e+00   0.000000e+00   
+2.300000e+01   6.963022e+01   7.498639e+01   9.037534e-01   0.000000e+00   3.082454e-05   2.037446e-01   6.703414e-04   0.000000e+00   
+2.400000e+01   7.063022e+01   7.606332e+01   3.690041e+00   0.000000e+00   3.974578e-05   5.523732e-01   3.025513e-02   0.000000e+00   
+2.500000e+01   7.163022e+01   7.714024e+01   1.135111e+01   0.000000e+00   3.967242e-05   9.212330e-01   2.608041e-01   0.000000e+00   
+2.600000e+01   7.263022e+01   7.821716e+01   2.710801e+01   0.000000e+00   3.155243e-05   1.063722e+00   1.073903e+00   0.000000e+00   
+2.700000e+01   7.363022e+01   7.929409e+01   5.219196e+01   0.000000e+00   2.073959e-05   9.280009e-01   2.847934e+00   0.000000e+00   
+2.800000e+01   7.463022e+01   8.037101e+01   8.462565e+01   0.000000e+00   1.175494e-05   6.571458e-01   5.661756e+00   0.000000e+00   
+2.900000e+01   7.563022e+01   8.144793e+01   1.208203e+02   0.000000e+00   5.999907e-06   4.015537e-01   9.293599e+00   6.049059e-05   
+3.000000e+01   7.663022e+01   8.252486e+01   1.579314e+02   0.000000e+00   2.864542e-06   2.224486e-01   1.331079e+01   1.414022e-01   
+3.100000e+01   7.763022e+01   8.360178e+01   1.946108e+02   0.000000e+00   1.315819e-06   1.157936e-01   1.617200e+01   1.578952e+00   
+3.200000e+01   7.863022e+01   8.467870e+01   2.304605e+02   0.000000e+00   5.922782e-07   5.799319e-02   1.624549e+01   5.163235e+00   
+3.300000e+01   7.963022e+01   8.575563e+01   2.654240e+02   0.000000e+00   2.641526e-07   2.836469e-02   1.387117e+01   1.004774e+01   
+3.400000e+01   8.063022e+01   8.683255e+01   2.995216e+02   0.000000e+00   1.175094e-07   1.367728e-02   1.047336e+01   1.501799e+01   
+3.500000e+01   8.163022e+01   8.790947e+01   3.327838e+02   0.000000e+00   5.235610e-08   6.542629e-03   7.226105e+00   1.943789e+01   
+3.600000e+01   8.263022e+01   8.898639e+01   3.652410e+02   0.000000e+00   2.342544e-08   3.118128e-03   4.667398e+00   2.322402e+01   
+3.700000e+01   8.363022e+01   9.006332e+01   3.969220e+02   0.000000e+00   1.054373e-08   1.485044e-03   2.871888e+00   2.645470e+01   
+3.800000e+01   8.463022e+01   9.114024e+01   4.278543e+02   0.000000e+00   4.779697e-09   7.083386e-04   1.704775e+00   2.869748e+01   
+3.900000e+01   8.563022e+01   9.221716e+01   4.580641e+02   0.000000e+00   2.184014e-09   3.389242e-04   9.853806e-01   2.903467e+01   
+4.000000e+01   8.663022e+01   9.329409e+01   4.875764e+02   0.000000e+00   1.006464e-09   1.628734e-04   5.584571e-01   2.706956e+01   
