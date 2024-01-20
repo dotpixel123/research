@@ -1,7 +1,7 @@
 # Research Paper
 
 - Title: Sub-barrier evaporation residues in Li + Bi system
-- Paper Publication: http://sympnp.org/proceedings/67/
+- Paper Publication: http://sympnp.org/proceedings/67/B75
 
 ## Technology used
 
